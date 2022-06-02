@@ -59,12 +59,22 @@ D7 = X Y Z
 
 
 
-### PROGRAM 
+### PROGRAM (encoder)
+~~~
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: u.srinias
+RegisterNumber:  212221230108
+
+module enc(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a,b,c;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
 */
+~~~
 
 
 
@@ -72,16 +82,12 @@ RegisterNumber:
 
 
 ### RTL LOGIC  
-
-
-
-
-
-
-
+![171544996-5cfa93e7-86fc-42d8-9e5d-687b3146ff65](https://user-images.githubusercontent.com/93427183/171545945-40deb491-509b-48bc-887a-52bf0aca816d.png)
 
 ### TIMING DIGRAMS  
 
+
+![171545012-01846b5b-2c52-4f99-9347-f1a583c71d13](https://user-images.githubusercontent.com/93427183/171546091-78bd8407-dcd0-4661-ac37-d3633dc5b42f.jpeg)
 
 
 
@@ -90,7 +96,40 @@ RegisterNumber:
 
 
 
+![171545485-081f0497-5689-49ba-9e62-f1e1ead2c234](https://user-images.githubusercontent.com/93427183/171546352-d2284290-35d8-4c36-87a7-c193dc739e76.png)
 
+
+### program( decoder)
+~~~
+
+Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
+Developed by: u.srinivas
+RegisterNumber:  212221230108
+
+
+module enc(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+
+endmodule 
+~~~
+### RTL LOGIC 
+![171545203-cc7c2118-d4ae-4364-a095-9c418ef0a5d7](https://user-images.githubusercontent.com/93427183/171546426-a7ca085d-9310-4e21-a81c-4262698d15ff.png)
+
+
+### TIMING DIGRAMS 
+![171545245-b8c00f4e-8474-4533-8fad-755bb2704671](https://user-images.githubusercontent.com/93427183/171546461-dd706894-cff0-46de-99a2-44ef8c9fcb48.png)
+### TRUTH TABLE 
+![171546126-a5486670-9948-4b5d-aba6-dcad149b283b](https://user-images.githubusercontent.com/93427183/171546513-4a09714a-d7e9-4e4a-800a-3fe31b035214.png)
 
 
 ### RESULTS 
+Thus the program to desing encoder and decoder using quartus is done.
